@@ -17,13 +17,13 @@
         "jabatan_hapus"
     ];
 
-    if (isset($_GET['hal'])) {
-        $hal = $_GET['hal'];
+    if (isset($_GET['hal'])) { //untuk mengecek apakah ada parameter GET yang dikirim
+        $hal = $_GET['hal']; //jika ada maka akan disimpan dalam variabel $hal
     } else {
         $hal = 'dashboard';
     }
 
-    foreach($halaman as $h){
+    foreach($halaman as $h){ //melakukan perulangan untuk mengecek apakah parameter GET yang dikirim ada dalam array $halaman
         if($hal == $h){
             include "content/$h.php";
             break;

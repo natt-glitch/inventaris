@@ -14,7 +14,8 @@
         "jabatan_insert",
         "jabatan_edit",
         "jabatan_update",
-        "jabatan_hapus"
+        "jabatan_hapus",
+        "inventaris"
     ];
 
     if (isset($_GET['hal'])) { //untuk mengecek apakah ada parameter GET yang dikirim

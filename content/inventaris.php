@@ -1,5 +1,5 @@
 <?php
-if(!defined('INDEX')) die();
+    if (!defined('INDEX')) die("");
 ?>
 
 <h2 class="judul">Data Pegawai</h2>
@@ -18,10 +18,10 @@ if(!defined('INDEX')) die();
     </thead>
     <tbody>
 <?php
-$query = "SELECT * FROM pegawai ";
-$query .= "LEFT JOIN jabatan ";
-$query .= "ON pegawai.id_jabatan = jabatan.id_jabatan ";
-$query .= "ORDER BY pegawai.id_jabatan DESC";
+$query = "SELECT * FROM datainventaris ";
+// $query .= "LEFT JOIN jabatan ";
+// $query .= "ON pegawai.id_jabatan = jabatan.id_jabatan ";
+// $query .= "ORDER BY pegawai.id_jabatan DESC";
 $result = mysqli_query($con, $query);
 $no = 0;
 

@@ -4,9 +4,9 @@
     $halaman = [
         "dashboard",
         "pegawai",
-        "pegawai_tambah",
+        "inventaris_tambah",
         "pegawai_insert",
-        "pegawai_edit",
+        "inventaris_edit",
         "pegawai_update",
         "pegawai_hapus",
         "jabatan",

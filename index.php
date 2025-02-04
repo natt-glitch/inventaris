@@ -29,13 +29,14 @@
             <ul class="menu">
                 <li><a href="?hal=dashboard">Dashboard</a></li>
                 <li><a href="?hal=inventaris">Data Inventaris</a></li>
+                <li><a href="?hal=inventaris_tambah">Tambah Barang</a></li>
                 <li><a href="?hal=dashboard">Data Peminjam</a></li>
                 <li><a href="logout.php">Keluar</a></li>
             </ul>
         </aside>
         <section class="main">
             <?php include "konten.php" ?>
-        </section>
+        </section> 
     </div>
     <footer>
         Made with 🤝 + 🍻 = 💝 <b>Kelompok 5 </b>

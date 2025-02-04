@@ -3,7 +3,7 @@ if(!defined('INDEX')) die();
 ?>
 
 <h2 class="judul">Tambah Pegawai</h2>
-<form action="?hal=pegawai_insert" method="post" enctype="multipart/form-data">
+<form action="?hal=inventaris_insert" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="foto">Foto</label>
         <div class="input">
@@ -36,13 +36,13 @@ if(!defined('INDEX')) die();
         <div class="input">
             <select name="jabatan" id="jabatan">
                 <option value=""> - Pilih Jabatan - </option>
-<?php
-$query = "SELECT * FROM jabatan";
-$result = mysqli_query($con,$query);
-while($data = mysqli_fetch_assoc($result)){
-    echo "<option value='$data[id_jabatan]'> $data[nama_jabatan] </option>";
-}
-?>
+                <?php
+                $query = "SELECT * FROM jabatan";
+                $result = mysqli_query($con,$query);
+                while($data = mysqli_fetch_assoc($result)){
+                    echo "<option value='$data[id_jabatan]'> $data[nama_jabatan] </option>";
+                }
+                ?>
             </select>
         </div>
     </div>

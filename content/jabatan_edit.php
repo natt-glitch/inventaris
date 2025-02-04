@@ -1,9 +1,9 @@
 <?php
-if(!definesd('INDEX')) die();
+if(!defined('INDEX')) die();
 
 $id = $_GET['id'];
 $query = "SELECT * FROM jabatan WHERE id_jabatan='$id'";
-$result = mysqli_query($con,$query);
+$result = mysqli_query($con,$query); // untuk
 $data = mysqli_fetch_assoc($result);
 ?>
 

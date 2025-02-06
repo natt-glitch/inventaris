@@ -1,0 +1,35 @@
+<!-- Input Gender -->
+    <div class="form-group">
+        <label for="jk">Jenis Kelamin</label> 
+
+        <!-- Pengecekan gender -->
+        <?php
+        if($data['jenis_kelamin']=="L"){ //untuk mengecek jenis kelamin jika L maka akan menampilkan Laki-laki
+            $l=" checked"; //jika L maka akan menampilkan Laki-laki
+            $p=""; //jika p akan kosong
+        }else{ //jika tidak L maka akan menampilkan Perempuan
+            $l=""; //jika L akan kosong
+            $p=" checked";  //jika P maka akan menampilkan Perempuan
+        }
+        ?>
+
+        <input type="radio" name="jk" id="jk" value="L" <?= $l ?>> Laki-laki <!--untuk menampilkan jenis kelamin Laki-laki-->
+        <input type="radio" name="jk" id="jk" value="P" <?= $p ?>> Perempuan <!--untuk menampilkan jenis kelamin Perempuan-->
+    </div>
+
+<!-- Input Tanggal Lahir -->
+<div class="form-group">
+        <label for="tanggal">Tanggal</label>
+        <div class="input">
+            <input type="date" name="tanggal" id="tanggal" value="<?=$data['tgl_lahir']?>">
+        </div>
+    </div>
+
+    <!-- Input Foto -->
+    <!-- <div class="form-group">
+        <label for="foto">Foto</label>
+        <div class="input">
+            <input type="file" name="foto" id="foto">
+            <img src="images/<?=$data['foto']?>" width="100"  alt="">
+        </div>
+    </div> -->

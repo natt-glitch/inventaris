@@ -32,7 +32,7 @@ while ($data = mysqli_fetch_assoc($result)) { //mengambil data dari database
     <td><?=$data['kodeBarang']?></td>
     <td><?=$data['namaBarang']?></td> <!--mengambil data nama_pegawai dari database-->
     <td><?=$data['harga']?></td>
-    <td><?=$data['jenis']?></td>
+    <td><?=$data['jenisBarang']?></td>
     <td><?=$data['kondisiBarang']?></td>
     <td>
         <a href="?hal=inventaris_edit&id=<?=$data['kodeBarang']?>"

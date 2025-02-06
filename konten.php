@@ -7,7 +7,7 @@
         "inventaris_tambah",
         "pegawai_insert",
         "inventaris_edit",
-        "pegawai_update",
+        "inventaris_update",
         "pegawai_hapus",
         "jabatan",
         "jabatan_tambah",

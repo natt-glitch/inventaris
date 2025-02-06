@@ -11,18 +11,18 @@ $nama_barang   = $_POST['nama_barang'];
 $harga      = $_POST['harga'];
 $kondisi_barang = $_POST['kondisi_barang'];
 $ket        = $_POST['keterangan'];
-$jenis      = $_POST['jenis'];
+$jenis      = $_POST['jenis_barang'];
 
 $error = "";
 
 $query  = "UPDATE datainventaris ";
-$query .= "LEFT JOIN jenis  ON jenisBarang = kode SET ";
-$query .= "namaBarang = '$nama_barang', ";
-$query .= "harga = '$harga', ";
-$query .= "kondisiBarang = '$kondisi_barang', ";
-$query .= "jenis = '$jenis', ";
-$query .= "keterangan = '$ket' ";
-$query .= "WHERE kodeBarang = '$kode_barang'";
+$query .= "JOIN jenis ON datainventaris.kodeBarang = jenis.jenisBarang SET " ;
+$query .= "datainventaris.namaBarang = '$nama_barang', ";
+$query .= "datainventaris.harga = '$harga', ";
+$query .= "datainventaris.kondisiBarang = '$kondisi_barang', ";
+$query .= "jenis.jenisBarang = '$jenis', ";
+$query .= "datainventaris.Deskripsi = '$ket' ";
+$query .= "WHERE datainventaris.kodeBarang = '$kode_barang';";
 
     $result = mysqli_query($con,$query);
     

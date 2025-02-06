@@ -52,10 +52,10 @@ $data = mysqli_fetch_assoc($result);
 
     <!-- Input Jabatan -->
     <div class="form-group">
-        <label for="jabatan">Jabatan</label>
+        <label for="jabatan">Jenis Barang</label>
         <div class="input">
-            <select name="jenis" id="jabatan">
-                <option value=""> - Pilih Jabatan - </option>
+            <select name="jenis_barang" id="jabatan">
+                <option value=""> - Pilih Jenis Barang - </option>
                 <?php
                 $queryj = "SELECT * FROM jenis"; 
                 $resultj = mysqli_query($con,$queryj);
@@ -63,7 +63,7 @@ $data = mysqli_fetch_assoc($result);
                 while($j = mysqli_fetch_assoc($resultj)){
                     echo "<option value='$j[kode]'";
                     if($j['kode'] == $data['kode']) echo " selected";
-                    echo "> $j[jenis] </option>";
+                    echo "> $j[jenisBarang] </option>";
                 }
                 ?>
             </select>

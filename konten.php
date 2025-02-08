@@ -5,7 +5,7 @@
         "dashboard",
         "pegawai",
         "inventaris_tambah",
-        "pegawai_insert",
+        "inventaris_insert",
         "inventaris_edit",
         "inventaris_update",
         "pegawai_hapus",

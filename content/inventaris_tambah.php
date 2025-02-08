@@ -4,53 +4,60 @@ if(!defined('INDEX')) die();
 
 <h2 class="judul">Tambah Pegawai</h2>
 <form action="?hal=inventaris_insert" method="post" enctype="multipart/form-data">
+
+    <!-- Input ID -->
+    <input type="hidden" name="kode"><!--untuk menyimpan id yang berasal dari database-->
+
+    <!-- Input Nama -->
+
+    
     <div class="form-group">
-        <label for="foto">Foto</label>
+        <label for="nama">Nama Barang</label>
         <div class="input">
-            <input type="file" name="foto" id="foto">
+            <input type="text" name="nama_barang" id="nama_barang" >
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="nama">Harga Barang</label>
+        <div class="input">
+            <input type="text" name="harga" id="harga" >
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="nama">Kondisi Barang</label>
+        <div class="input">
+            <input type="text" name="kondisi_barang" id="kondisi_barang" >
+        </div>
+    </div>
+    
+    <!-- Input Keterangan -->
+    <div class="form-group">
+        <label for="kondisi">Keterangan</label>
+        <div class="input">
+            <textarea name="keterangan" id="kondisi"
+            style="width:100%" rows="5"></textarea>
         </div>
     </div>
 
+    <!-- Input Jabatan -->
     <div class="form-group">
-        <label for="nama">Nama</label>
+        <label for="jabatan">Jenis Barang</label>
         <div class="input">
-            <input type="text" name="nama" id="nama">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="jk">Jenis Kelamin</label>
-        <input type="radio" name="jk" id="jk" value="L"> Laki-laki
-        <input type="radio" name="jk" id="jk" value="P"> Perempuan
-    </div>
-
-    <div class="form-group">
-        <label for="tanggal">Tanggal</label>
-        <div class="input">
-            <input type="date" name="tanggal" id="tanggal">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="jabatan">Jabatan</label>
-        <div class="input">
-            <select name="jabatan" id="jabatan">
-                <option value=""> - Pilih Jabatan - </option>
+            <select name="jenis_barang" id="jabatan">
+                <option value=""> - Pilih Jenis Barang - </option>
                 <?php
-                $query = "SELECT * FROM jabatan";
-                $result = mysqli_query($con,$query);
-                while($data = mysqli_fetch_assoc($result)){
-                    echo "<option value='$data[id_jabatan]'> $data[nama_jabatan] </option>";
+                $queryj = "SELECT * FROM jenis"; 
+                $resultj = mysqli_query($con,$queryj);
+                $data = mysqli_fetch_assoc($resultj);
+                while($j = mysqli_fetch_assoc($resultj)){ 
+                    echo "<option value='$j[kodeBarang]'"; 
+                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
+                    echo "> $j[jenisBarang] </option>";
                 }
                 ?>
             </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="keterangan">Keterangan</label>
-        <div class="input">
-            <textarea name="keterangan" id="keterangan" style="width:100%" rows="5" ></textarea>
         </div>
     </div>
 

@@ -13,12 +13,7 @@ $data = mysqli_fetch_assoc($result);
     <input type="hidden" name="kode" value="<?=$data['kodeBarang']?>"><!--untuk menyimpan id yang berasal dari database-->
 
     <!-- Input Nama -->
-    <div class="form-group">
-        <label for="nama">Kode Barang</label>
-        <div class="input">
-            <input type="text" name="kode_barang" id="kode_barang" value="<?=$data['kodeBarang']?>">
-        </div>
-    </div>
+
     
     <div class="form-group">
         <label for="nama">Nama Barang</label>
@@ -60,9 +55,9 @@ $data = mysqli_fetch_assoc($result);
                 $queryj = "SELECT * FROM jenis"; 
                 $resultj = mysqli_query($con,$queryj);
                 $data = mysqli_fetch_assoc($resultj);
-                while($j = mysqli_fetch_assoc($resultj)){
-                    echo "<option value='$j[kode]'";
-                    if($j['kode'] == $data['kode']) echo " selected";
+                while($j = mysqli_fetch_assoc($resultj)){ 
+                    echo "<option value='$j[kodeBarang]'"; 
+                    if($j['kodeBarang'] == $data['kode_barang']) echo " selected";
                     echo "> $j[jenisBarang] </option>";
                 }
                 ?>

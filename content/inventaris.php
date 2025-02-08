@@ -20,7 +20,7 @@
 <?php
 $query = "SELECT * FROM datainventaris "; 
 $query .= "JOIN jenis "; //untuk menggabungkan 2 tabel yaitu datainventaris dan jabatan
-$query .= "ON datainventaris.kodeBarang = jenis.kode "; //menggabungkan 2 tabel berdasarkan id_jabatan
+$query .= "ON datainventaris.kodeBarang = jenis.kodeBarang "; //menggabungkan 2 tabel berdasarkan id_jabatan
 $query .= "ORDER BY datainventaris.kodeBarang DESC"; //untuk mengurutkan data berdasarkan kodebarang
 $result = mysqli_query($con, $query); 
 $no = 0;

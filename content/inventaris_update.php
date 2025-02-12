@@ -1,14 +1,17 @@
 <?php
 if(!defined('INDEX')) die();
 
+
 // $foto   = $_FILES['foto']['name'];
 // $lokasi = $_FILES['foto']['tmp_name'];
 // $tipe   = $_FILES['foto']['type'];
 // $ukuran = $_FILES['foto']['size'];
 
-$kode   = $_POST['kode'];
+$id = intval($_POST['id']); 
 $nama_barang   = $_POST['nama_barang'];
-$harga      = $_POST['harga'];
+$jenis_barang   = $_POST['jenis_barang'];
+$kode_barang   = $_POST['kode_barang'];
+$harga      = floatval($_POST['harga']);
 $kondisi_barang = $_POST['kondisi_barang'];
 $ket        = $_POST['keterangan'];
 $jenis      = $_POST['jenis_barang'];
@@ -26,14 +29,18 @@ $jenis      = $_POST['jenis_barang'];
 //     $result = mysqli_query($con,$query);
     
 $query  = "UPDATE datainventaris SET ";
+$query .= "kodeBarang = '$kode_barang', ";
 $query .= "namaBarang = '$nama_barang', ";
 $query .= "harga = '$harga', ";
 $query .= "kondisiBarang = '$kondisi_barang', ";
-$query .= "Deskripsi = '$ket'";
-$query .= "WHERE kodeBarang = '$kode'";
+$query .= "keterangan = '$ket' ";
+$query .= "WHERE id = '$id'";
+// var_dump($nama_barang, $kode_barang, $harga, $kondisi_barang, $ket, $id);
+// exit(); // Hentikan eksekusi sementara untuk debugging
 
 $result = mysqli_query($con,$query);
 $hasil = mysqli_affected_rows($con);
+var_dump($hasil);
 
 
 if ($hasil > 0){

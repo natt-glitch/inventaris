@@ -10,6 +10,24 @@ if(!defined('INDEX')) die();
 
     <!-- Input Nama -->
 
+    <div class="form-group">
+        <label for="inventaris">kode Barang</label>
+        <div class="input">
+            <select name="kodeBarang" id="jabatan">
+                <option value=""> - Pilih kode Barang - </option>
+                <?php
+                $queryj = "SELECT * FROM jenis "; 
+                $resultj = mysqli_query($con,$queryj);
+                $data = mysqli_fetch_assoc($resultj);
+                while($j = mysqli_fetch_assoc($resultj)){ 
+                    echo "<option value='$j[kodeBarang]'"; 
+                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
+                    echo "> $j[kodeBarang] $j[jenisBarang] </option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
     
     <div class="form-group">
         <label for="nama">Nama Barang</label>
@@ -43,12 +61,12 @@ if(!defined('INDEX')) die();
 
     <!-- Input Jabatan -->
     <div class="form-group">
-        <label for="jabatan">Jenis Barang</label>
+        <label for="inventaris">Jenis Barang</label>
         <div class="input">
-            <select name="jenis_barang" id="jabatan">
+            <select name="jenisBarang" id="jabatan">
                 <option value=""> - Pilih Jenis Barang - </option>
                 <?php
-                $queryj = "SELECT * FROM jenis"; 
+                $queryj = "SELECT * FROM jenis "; 
                 $resultj = mysqli_query($con,$queryj);
                 $data = mysqli_fetch_assoc($resultj);
                 while($j = mysqli_fetch_assoc($resultj)){ 
@@ -60,7 +78,7 @@ if(!defined('INDEX')) die();
             </select>
         </div>
     </div>
-
+    
     <div class="form-group">
         <input type="submit" value="Simpan" class="tombol simpan">
         <input type="reset" value="Batal" class="tombol reset">

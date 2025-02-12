@@ -1,20 +1,37 @@
 <?php
 if(!defined('INDEX')) die();
 
-$id = $_GET['id'];
-$query = "SELECT * FROM datainventaris WHERE kodeBarang = '$id'";
+$id = $_GET['id']; 
+$query = "SELECT * FROM datainventaris WHERE id = '$id'";
 $result = mysqli_query($con,$query);
 $data = mysqli_fetch_assoc($result);
 ?>
+
 <h2 class="judul">Edit Data Inventaris</h2>
 <form action="?hal=inventaris_update" method="post" enctype="multipart/form-data">
 
     <!-- Input ID -->
-    <input type="hidden" name="kode" value="<?=$data['kodeBarang']?>"><!--untuk menyimpan id yang berasal dari database-->
-
+    <input type="hidden" name="id" value="<?=$data['id']?>">
     <!-- Input Nama -->
 
-    
+    <div class="form-group">
+        <label for="jabatan">Kode Barang</label>
+        <div class="input">
+            <select name="kode_barang" id="jabatan">
+                <option value=""> - Pilih Kode Jenis Barang - </option>
+                <?php
+                $queryj = "SELECT * FROM jenis"; 
+                $resultj = mysqli_query($con,$queryj);
+                while($j = mysqli_fetch_assoc($resultj)){ 
+                    echo "<option value='$j[kodeBarang]'"; 
+                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
+                    echo "> $j[kodeBarang] </option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+
     <div class="form-group">
         <label for="nama">Nama Barang</label>
         <div class="input">
@@ -41,7 +58,7 @@ $data = mysqli_fetch_assoc($result);
         <label for="kondisi">Keterangan</label>
         <div class="input">
             <textarea name="keterangan" id="kondisi"
-            style="width:100%" rows="5"><?= $data['Deskripsi'] ?></textarea>
+            style="width:100%" rows="5"><?= $data['keterangan'] ?></textarea>
         </div>
     </div>
 
@@ -54,12 +71,12 @@ $data = mysqli_fetch_assoc($result);
                 <?php
                 $queryj = "SELECT * FROM jenis"; 
                 $resultj = mysqli_query($con,$queryj);
-                $data = mysqli_fetch_assoc($resultj);
                 while($j = mysqli_fetch_assoc($resultj)){ 
                     echo "<option value='$j[kodeBarang]'"; 
-                    if($j['kodeBarang'] == $data['kode_barang']) echo " selected";
+                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
                     echo "> $j[jenisBarang] </option>";
                 }
+                
                 ?>
             </select>
         </div>

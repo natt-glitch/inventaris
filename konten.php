@@ -2,19 +2,20 @@
     if (!defined('INDEX')) die();
 
     $halaman = [
-        "dashboard",
+        "dashboard_admin",
+        "dashboard_user",
         "pegawai",
         "inventaris_tambah",
         "inventaris_insert",
         "inventaris_edit",
         "inventaris_update",
         "inventaris_hapus",
-        "jabatan",
-        "jabatan_tambah",
-        "jabatan_insert",
-        "jabatan_edit",
-        "jabatan_update",
-        "jabatan_hapus",
+        "peminjam",
+        "peminjam_tambah",
+        "peminjam_insert",
+        "peminjam_edit",
+        "peminjam_update",
+        "peminjam_hapus",
         "inventaris"
     ];
 

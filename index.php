@@ -22,15 +22,15 @@
 </head>
 <body>
     <header>
-        Aplikasi Peminjaman Barang
+        Aplikasi Inventaris & Peminjaman Barang
     </header>
     <div class="container">
         <aside>
             <ul class="menu">
-                <li><a href="?hal=dashboard">Dashboard</a></li>
+                <li><a href="?hal=dashboard_admin">Dashboard</a></li>
                 <li><a href="?hal=inventaris">Data Inventaris</a></li>
                 <li><a href="?hal=inventaris_tambah">Tambah Barang</a></li>
-                <li><a href="?hal=dashboard">Data Peminjam</a></li>
+                <li><a href="?hal=peminjam">Data Peminjam</a></li>
                 <li><a href="logout.php">Keluar</a></li>
             </ul>
         </aside>

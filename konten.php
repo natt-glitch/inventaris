@@ -16,7 +16,9 @@
         "peminjam_edit",
         "peminjam_update",
         "peminjam_hapus",
+        "peminjaman",
         "inventaris",
+        "pinjam",
         "coba"
     ];
 

@@ -2,14 +2,15 @@
     if (!defined('INDEX')) die(""); 
 ?>
 
-<h2 class="judul">Data Barang</h2>
-
+<h2 class="judul">Data Inventaris</h2>
 <table class="table">
     <thead>
         <th>No</th>
         <th>Nama Barang</th>
         <th>Jenis</th>
         <th>Kondisi</th>
+        <th>Keterangan</th>
+        <th>Stok</th>
         <th>Aksi</th>
     </thead>
     <tbody>
@@ -29,9 +30,11 @@ while ($data = mysqli_fetch_assoc($result)) { //mengambil data dari database
     <td><?=$data['namaBarang']?></td> <!--mengambil data nama_pegawai dari database-->
     <td><?=$data['jenisBarang']?></td>
     <td><?=$data['kondisiBarang']?></td>
+    <td><?=$data['keterangan']?></td>
+    <td><?=$data['stok']?></td>
     <td>
-        <a href="?hal=peminjam_tambah&id=<?=$data['id']?>"
-        class="tombol edit">Pinjam Barang</a>
+        <a href="?hal=coba&id=<?=$data['id']?>"
+        class="tombol edit">Pinjam</a>
     </td>
 </tr>
 

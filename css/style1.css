@@ -47,14 +47,14 @@
  }
  
  /* Mengatur tampilan tombol submit */
- input[type=submit]{
+ input[type=submit], button{
     background-color: #038ade;
     border: none;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
  }
- 
+
  /* ============== */
  /*  Style Halaman Form */
  /* ============== */

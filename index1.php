@@ -1,7 +1,7 @@
 <?php
     session_start();
     ob_start();
-
+    
     include "library/config.php";
 
     if (empty($_SESSION['username']) OR empty($_SESSION['password'])) {
@@ -10,6 +10,8 @@
     } else {
         define('INDEX', true);  
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,7 @@
         <aside>
             <ul class="menu">
                 <li><a href="?hal=dashboard_user">Dashboard</a></li>
-                <li><a href="?hal=coba&id=<?$data['id']?>">Peminjaman</a></li>
+                <li><a href="?hal=pinjam">Peminjaman</a></li>
                 <li><a href="logout.php">Keluar</a></li>
             </ul>
         </aside>

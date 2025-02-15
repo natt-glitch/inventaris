@@ -18,7 +18,7 @@
     <title>Dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <Link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
     <header>
@@ -33,7 +33,11 @@
             </ul>
         </aside>
         <section class="main">
+            <div class="bg">
+            <img class="mas" src="gambar/logo.png" alt="">
+            </div>
             <?php include "konten.php" ?>
+
         </section> 
     </div>
     <footer>

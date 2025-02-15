@@ -1,43 +1,43 @@
 *{
     box-sizing: border-box;
-}
-
-/* Mengatur font yang dipakai dan beckground halaman */
-body{
+ }
+ 
+ /* Mengatur font yang dipakai dan beckground halaman */
+ body{
     font-family: Arial;
     margin: 0;
     background: #038ade;
-}
-
-/* =================== */
-/* Style Halaman Login */
-/* =================== */
-
-/* Membuat container menjadi layot flexbox dan kotak login di tengah */
-.container{
+ }
+ 
+ /* =================== */
+ /* Style Halaman Login */
+ /* =================== */
+ 
+ /* Membuat container menjadi layot flexbox dan kotak login di tengah */
+ .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-/* mengatur judul form dengan border bawah dan posisi di tengah */
-.login-box{
+ }
+ 
+ /* mengatur judul form dengan border bawah dan posisi di tengah */
+ .login-box{
     margin-top: 150px;
     flex-basis: 400px;
     background: #fff;
     padding: 20px;
-}
-
-/* Mengatur judul form dengan border bawah dan posisi di tengah */
-.login-box h2{
+ }
+ 
+ /* Mengatur judul form dengan border bawah dan posisi di tengah */
+ .login-box h2{
     border-bottom: 1px solid #ccc;
     color: #555;
     text-align: center;
     padding-bottom: 20px;
     margin: 0 0 20px;
-}
-/* Mengatur agar tag input dan select memenuhi container dan
-tampilan lebih bagus
+ }
+ /* Mengatur agar tag input dan select memenuhi container dan
+ tampilan lebih bagus
  */
  input, select{
     width: 100%;
@@ -45,7 +45,7 @@ tampilan lebih bagus
     margin: 8px 0;
     border: 1px solid #ccc;
  }
-
+ 
  /* Mengatur tampilan tombol submit */
  input[type=submit]{
     background-color: #038ade;
@@ -54,16 +54,16 @@ tampilan lebih bagus
     text-decoration: none;
     cursor: pointer;
  }
-
+ 
  /* ============== */
  /*  Style Halaman Form */
  /* ============== */
-
+ 
  /* Mengatur form-group agar tidak terpengaruh float */
  .form-group{
     clear: both;
  }
-
+ 
  /* Mengatur lebar label 20% dengan text bold */
  .form-group label{
     display: block;
@@ -72,14 +72,14 @@ tampilan lebih bagus
     width: 30%;
     font-weight: bold;
  }
-
+ 
  /* Mengukur lebar .input 50% dan sejajar dengan label */
  .form-group .input{
     display: block;
     width: 50%;
     float: left;
  }
-
+ 
  /* Mengatur input radio, tombol submit dan tombol reser */
  input[type=radio]{
     width: 50px;
@@ -90,44 +90,44 @@ tampilan lebih bagus
  .tombol.reset{
     background: #fb8307;
  }
-
+ 
  /* Membuat tampilan form menumpuk pada layer kecil */
  @media (max-width: 700px){
     .form-group label, .form-group .input{
         width: 100%;
     }
  }
-
-
+ 
+ 
  /* ================ */
  /* Style Halam Tabel */
  /* ================ */
-
-/* Mengatur desain judul halaman dengan boorder di bawah */
-.judul{
+ 
+ /* Mengatur desain judul halaman dengan boorder di bawah */
+ .judul{
     color: #555;
     border-bottom: 1px solid #ccc;
     padding-bottom: 15px;
-}
-/* Mengatur agar lebar penuh dan antar border di bawah */
-.table{
+ }
+ /* Mengatur agar lebar penuh dan antar border di bawah */
+ .table{
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-}
-/* Menambahkan border dan pedding pada sel tabel */
-.table th, .table td{
+ }
+ /* Menambahkan border dan pedding pada sel tabel */
+ .table th, .table td{
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-}
-/* Mengatur background bagian judl tabel */
-.table th{
+ }
+ /* Mengatur background bagian judl tabel */
+ .table th{
     background: #eee;
-}
-
-/* Mengatur desain tombo yang di buat dengan tan <a> */
-.tombol{
+ }
+ 
+ /* Mengatur desain tombo yang di buat dengan tan <a> */
+ .tombol{
     display: inline-block;
     max-width: 150px;
     padding: 15px 30px;
@@ -135,21 +135,21 @@ tampilan lebih bagus
     text-decoration: none;
     background: #038ade;
     cursor: pointer;
-}
+ }
  /* Desain tombol edit dan hapus agar lebih kecil */
  .tombol.edit,.tombol.hapus{
     padding: 10px 15px;
     font-size: 12px;
  }
-
+ 
  .tombol.hapus{
     background: #fc4c4c;
  }
-
+ 
  /* ================= */
  /* Style Halaman Dashboard */
  /* ================= */
-
+ 
  /* Mengatur Desain Header */
  header{
     background: #222;
@@ -157,13 +157,13 @@ tampilan lebih bagus
     padding: 18PX 23PX;
     font-size: 25px;
  }
-
+ 
  /* Mengatur lebar menu 20% dengan background hitam */
  aside{
     flex: 20%;
     background: #7e7e7e ;
  }
-
+ 
  /* Mengatur lebar konten utama 80% dengan background putih  */
  section.main{
     flex: 80%;
@@ -171,7 +171,7 @@ tampilan lebih bagus
     min-height: 530px;
     padding: 15px 20px;
  }
-
+ 
  /* Mengatur footer dengan background abu-abu dan text di tengah */
  footer{
     background: #ccc;
@@ -179,21 +179,21 @@ tampilan lebih bagus
     padding: 15px;
     text-align: center ;
  }
-
+ 
  /* Mengatur layout pada layar kecil (responsive) */
  @media (max-width: 700px){
     .container{
         flex-direction: column;
     }
  }
-
+ 
  /* Navigasi */
  /* Membuang padding tag <ul>  */
  .menu{
     padding: 0;
     color:#eee;
  }
-
+ 
  /* Menambah border bawah tag <li> */
  .menu a{
     display: block;
@@ -202,11 +202,23 @@ tampilan lebih bagus
     color: #fff;
     text-decoration: none;
  }
-
+ 
  /* Mengganti background menu ketika ditunjuk mouse */
  .menu a:hover{
     background: #555;
  }
  .pl{
    text-decoration: none;
+ }
+ .mas{
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%); /* Atur kecerahan */
+    width: 5%;
+ }
+ .mbut{
+      background-size: cover;
+      background-position: center;
+      filter: brightness(50%); /* Atur kecerahan */
+      width: 5%;
  }

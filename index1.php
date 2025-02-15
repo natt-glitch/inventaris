@@ -22,6 +22,7 @@
 </head>
 <body>
     <header>
+        <img  class="bg" src="gambar/logo.png" alt="">
         Aplikasi Peminjaman Barang
     </header>
     <div class="container">
@@ -33,11 +34,8 @@
             </ul>
         </aside>
         <section class="main">
-            <div class="bg">
-            <img class="mas" src="gambar/logo.png" alt="">
-            </div>
             <?php include "konten.php" ?>
-
+            
         </section> 
     </div>
     <footer>

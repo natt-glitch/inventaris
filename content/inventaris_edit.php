@@ -61,7 +61,7 @@ $data = mysqli_fetch_assoc($result);
             style="width:100%" rows="5"><?= $data['keterangan'] ?></textarea>
         </div>
     </div>
-
+    
     <!-- Input Jabatan -->
     <div class="form-group">
         <label for="jabatan">Jenis Barang</label>
@@ -81,7 +81,13 @@ $data = mysqli_fetch_assoc($result);
             </select>
         </div>
     </div>
-
+    <div class="form-group">
+        <label for="kondisi">Stok</label>
+        <div class="input">
+            <input type="text" name="stok" id="stok" value="<?=$data['stok']?>">
+        </div>
+    </div>
+    
     <div class="form-group">
         <input type="submit" value="Simpan" class="tombol simpan">
         <input type="reset" value="Batal" class="tombol reset">

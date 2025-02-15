@@ -11,7 +11,6 @@
         define('INDEX', true);  
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,14 +21,14 @@
 </head>
 <body>
     <header>
-        <img  class="bg" src="gambar/logo.png" alt="">
-        Aplikasi Peminjaman Barang
+        <img  class="bg" src="gambar/logo.png" alt=""> Aplikasi Peminjaman Barang
+
     </header>
     <div class="container">
         <aside>
             <ul class="menu">
-                <li><a href="?hal=dashboard_admin">Dashboard</a></li>
-                <li><a href="?hal=peminjam">Peminjaman</a></li>
+                <li><a href="?hal=dashboard_user">Dashboard</a></li>
+                <li><a href="?hal=coba&id=<?$data['id']?>">Peminjaman</a></li>
                 <li><a href="logout.php">Keluar</a></li>
             </ul>
         </aside>

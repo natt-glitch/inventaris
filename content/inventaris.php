@@ -14,6 +14,7 @@
         <th>Jenis</th>
         <th>Kondisi</th>
         <th>Keterangan</th>
+        <th>Stok</th>
         <th>Aksi</th>
     </thead>
     <tbody>
@@ -36,6 +37,7 @@ while ($data = mysqli_fetch_assoc($result)) { //mengambil data dari database
     <td><?=$data['jenisBarang']?></td>
     <td><?=$data['kondisiBarang']?></td>
     <td><?=$data['keterangan']?></td>
+    <td><?=$data['stok']?></td>
     <td>
         <a href="?hal=inventaris_edit&id=<?=$data['id']?>"
         class="tombol edit">Edit</a>

@@ -16,7 +16,8 @@
         "peminjam_edit",
         "peminjam_update",
         "peminjam_hapus",
-        "inventaris"
+        "inventaris",
+        "coba"
     ];
 
     if (isset($_GET['hal'])) { //untuk mengecek apakah ada parameter GET yang dikirim

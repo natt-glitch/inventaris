@@ -22,6 +22,7 @@
 </head>
 <body>
     <header>
+        <img  class="bg" src="gambar/logo.png" alt=""> 
         Aplikasi Inventaris & Peminjaman Barang
     </header>
     <div class="container">

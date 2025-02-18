@@ -11,7 +11,7 @@ include 'library/config.php'; // Koneksi ke database
             <th>Kode Peminjam</th>
             <th>Nama Peminjam</th>
             <th>Nama Barang</th>
-            <th>Jumlah Dipinjam</th>
+            <th>Jumlah Barang</th>
             <th>Jam Pinjam</th>
             <th>Jam Kembali</th>
             <th>Aksi</th>

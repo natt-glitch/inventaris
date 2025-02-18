@@ -1,91 +1,23 @@
-
-
-<h2 class="judul">Tambah Pegawai</h2>
-<form action="?hal=inventaris_insert" method="post" enctype="multipart/form-data">
-
-    <!-- Input ID -->
-    <input type="hidden" name="kode"><!--untuk menyimpan id yang berasal dari database-->
-
-    <!-- Input Nama -->
-
-    <div class="form-group">
-        <label for="inventaris">kode Barang</label>
-        <div class="input">
-            <select name="kodeBarang" id="jabatan">
-                <option value=""> - Pilih kode Barang - </option>
-                <?php
-                $queryj = "SELECT * FROM jenis "; 
-                $resultj = mysqli_query($con,$queryj);
-                $data = mysqli_fetch_assoc($resultj);
-                while($j = mysqli_fetch_assoc($resultj)){ 
-                    echo "<option value='$j[kodeBarang]'"; 
-                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
-                    echo "> $j[kodeBarang] $j[jenisBarang] </option>";
-                }
-                ?>
-            </select>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daftar Aplikasi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <div class="container">
+        <section class="login-box">
+            <h2>Daftar Aplikasi</h2>
+            <form action="daftar_proses.php" method="post">
+                <input type="text" placeholder="Nama Lengkap" id="nama" name="nama">
+                <input type="text" placeholder="Username" id="username" name="username">
+                <input type="password" placeholder="Password" id="password" name="password">              
+                <input type="submit" value="Daftar">
+                <a href="daftar.php" style="text-decoration: none; display: block; text-align: center;">daftar akun</a>
+            </form>
+        </section>
     </div>
-    
-    <div class="form-group">
-        <label for="nama">Nama Barang</label>
-        <div class="input">
-            <input type="text" name="nama_barang" id="nama_barang" >
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="nama">Harga Barang</label>
-        <div class="input">
-            <input type="text" name="harga" id="harga" >
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="nama">Kondisi Barang</label>
-        <div class="input">
-            <input type="text" name="kondisi_barang" id="kondisi_barang" >
-        </div>
-    </div>
-    
-    <!-- Input Keterangan -->
-    <div class="form-group">
-        <label for="kondisi">Keterangan</label>
-        <div class="input">
-            <textarea name="keterangan" id="kondisi"
-            style="width:100%" rows="5"></textarea>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="nama">jumlah</label>
-        <div class="input">
-            <input type="text" name="jumlah" id="jumlah" >
-        </div>
-    </div>
-
-    <!-- Input Jabatan -->
-    <div class="form-group">
-        <label for="inventaris">Jenis Barang</label>
-        <div class="input">
-            <select name="jenisBarang" id="jabatan">
-                <option value=""> - Pilih Jenis Barang - </option>
-                <?php
-                $queryj = "SELECT * FROM jenis "; 
-                $resultj = mysqli_query($con,$queryj);
-                $data = mysqli_fetch_assoc($resultj);
-                while($j = mysqli_fetch_assoc($resultj)){ 
-                    echo "<option value='$j[kodeBarang]'"; 
-                    if($j['kodeBarang'] == $data['kodeBarang']) echo " selected";
-                    echo "> $j[jenisBarang] </option>";
-                }
-                ?>
-            </select>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <input type="submit" value="Simpan" class="tombol simpan">
-        <input type="reset" value="Batal" class="tombol reset">
-    </div>
-</form>
+</body>
+</html>

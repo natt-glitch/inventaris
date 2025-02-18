@@ -82,9 +82,9 @@ $data = mysqli_fetch_assoc($result);
         </div>
     </div>
     <div class="form-group">
-        <label for="kondisi">Stok</label>
+        <label for="kondisi">Jumlah</label>
         <div class="input">
-            <input type="text" name="stok" id="stok" value="<?=$data['stok']?>">
+            <input type="text" name="jumlah" id="jumlah" value="<?=$data['jumlah']?>">
         </div>
     </div>
     

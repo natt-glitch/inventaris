@@ -14,7 +14,7 @@ $kode_barang   = $_POST['kode_barang'];
 $harga      = floatval($_POST['harga']);
 $kondisi_barang = $_POST['kondisi_barang'];
 $ket        = $_POST['keterangan'];
-$stok        = intval($_POST['stok']);
+$jumlah        = intval($_POST['jumlah']);
 $jenis      = $_POST['jenis_barang'];
 
 
@@ -35,14 +35,13 @@ $query .= "namaBarang = '$nama_barang', ";
 $query .= "harga = '$harga', ";
 $query .= "kondisiBarang = '$kondisi_barang', ";
 $query .= "keterangan = '$ket', ";
-$query .= "stok = '$stok' ";
+$query .= "jumlah = '$jumlah' ";
 $query .= "WHERE id = '$id'";
 // var_dump($nama_barang, $kode_barang, $harga, $kondisi_barang, $ket, $id, $stok);
 // exit(); // Hentikan eksekusi sementara untuk debugging
 
 $result = mysqli_query($con,$query);
 $hasil = mysqli_affected_rows($con);
-var_dump($hasil);
 
 
 if ($hasil > 0){

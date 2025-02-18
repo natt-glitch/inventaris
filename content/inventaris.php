@@ -3,7 +3,12 @@
 ?>
 
 <h2 class="judul">Data Inventaris</h2>
-<a href="?hal=inventaris_tambah" class="tombol">Tambah</a>
+
+<form method="GET" style="margin: 10px 0;">
+    <input type="hidden" name="hal" value="inventaris">
+    <input type="text" name="search" placeholder="Cari Nama Barang..." value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
+    <button class="tombol edit" type="submit">Cari</button>
+</form>
 
 <table class="table">
     <thead>
@@ -14,40 +19,41 @@
         <th>Jenis</th>
         <th>Kondisi</th>
         <th>Keterangan</th>
-        <th>Stok</th>
+        <th>Jumlah</th>
         <th>Aksi</th>
     </thead>
     <tbody>
 <?php
+$search = isset($_GET['search']) ? mysqli_real_escape_string($con, $_GET['search']) : '';
 $query = "SELECT * FROM datainventaris "; 
-$query .= "LEFT JOIN jenis "; //untuk menggabungkan 2 tabel yaitu datainventaris dan jabatan
-$query .= "ON datainventaris.kodeBarang = jenis.kodeBarang "; //menggabungkan 2 tabel berdasarkan id_jabatan
-$query .= "ORDER BY datainventaris.kodeBarang DESC"; //untuk mengurutkan data berdasarkan kodebarang
+$query .= "LEFT JOIN jenis ON datainventaris.kodeBarang = jenis.kodeBarang "; 
+if ($search) {
+    $query .= "WHERE datainventaris.namaBarang LIKE '%$search%' ";
+}
+$query .= "ORDER BY datainventaris.kodeBarang DESC";
+
 $result = mysqli_query($con, $query); 
 $no = 0;
 
-while ($data = mysqli_fetch_assoc($result)) { //mengambil data dari database 
+while ($data = mysqli_fetch_assoc($result)) { 
     $no++;
 ?>
 <tr>
     <td><?=$no;?></td>
     <td><?=$data['kodeBarang']?></td>
-    <td><?=$data['namaBarang']?></td> <!--mengambil data nama_pegawai dari database-->
+    <td><?=$data['namaBarang']?></td>
     <td><?=$data['harga']?></td>
     <td><?=$data['jenisBarang']?></td>
     <td><?=$data['kondisiBarang']?></td>
     <td><?=$data['keterangan']?></td>
-    <td><?=$data['stok']?></td>
-    <td>
-        <a href="?hal=inventaris_edit&id=<?=$data['id']?>"
-        class="tombol edit">Edit</a>
-        <a href="?hal=inventaris_hapus&id=<?=$data['id']?>"
-        class="tombol hapus">hapus</a> 
+    <td><?=$data['jumlah']?></td>
+    <td style="display: flex; gap: 5px;">
+        <a href="?hal=inventaris_edit&id=<?=$data['id']?>" class="tombol edit">Edit</a>
+        <a href="?hal=inventaris_hapus&id=<?=$data['id']?>" class="tombol hapus">Hapus</a>
     </td>
 </tr>
-
-    </tbody>
-    <?php
+<?php
 }
 ?>
+    </tbody>
 </table>

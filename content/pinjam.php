@@ -1,8 +1,9 @@
 <?php
-    if (!defined('INDEX')) die(""); 
+if (!defined('INDEX')) die(""); 
 ?>
 
 <h2 class="judul">Data Inventaris</h2>
+<a href="?hal=coba" class="tombol edit">Pinjam Barang</a>
 <table class="table">
     <thead>
         <th>No</th>
@@ -10,36 +11,33 @@
         <th>Jenis</th>
         <th>Kondisi</th>
         <th>Keterangan</th>
-        <th>Stok</th>
-        <th>Aksi</th>
+        <th>jumlah</th>
     </thead>
     <tbody>
 <?php
-$query = "SELECT * FROM datainventaris "; 
-$query .= "LEFT JOIN jenis "; //untuk menggabungkan 2 tabel yaitu datainventaris dan jabatan
-$query .= "ON datainventaris.kodeBarang = jenis.kodeBarang "; //menggabungkan 2 tabel berdasarkan id_jabatan
-$query .= "ORDER BY datainventaris.kodeBarang DESC"; //untuk mengurutkan data berdasarkan kodebarang
+$query = "SELECT * FROM datainventaris 
+          LEFT JOIN jenis 
+          ON datainventaris.kodeBarang = jenis.kodeBarang 
+          ORDER BY datainventaris.kodeBarang DESC"; 
+
 $result = mysqli_query($con, $query); 
 $no = 0;
+$tombolDitampilkan = false; // Variabel untuk memastikan tombol hanya muncul sekali
 
-while ($data = mysqli_fetch_assoc($result)) { //mengambil data dari database 
+while ($data = mysqli_fetch_assoc($result)) { 
     $no++;
 ?>
 <tr>
     <td><?=$no;?></td>
-    <td><?=$data['namaBarang']?></td> <!--mengambil data nama_pegawai dari database-->
+    <td><?=$data['namaBarang']?></td>
     <td><?=$data['jenisBarang']?></td>
     <td><?=$data['kondisiBarang']?></td>
     <td><?=$data['keterangan']?></td>
-    <td><?=$data['stok']?></td>
-    <td>
-        <a href="?hal=coba&id=<?=$data['id']?>"
-        class="tombol edit">Pinjam</a>
-    </td>
-</tr>
+    <td><?=$data['jumlah']?></td>
 
-    </tbody>
-    <?php
+</tr>
+<?php 
 }
 ?>
+    </tbody>
 </table>

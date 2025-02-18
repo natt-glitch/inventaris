@@ -18,9 +18,9 @@
         $_SESSION['role'] = $data['role'];
 
         if ($_SESSION['role'] == 'admin') {
-            header("Location: index.php");
+            header("Location: index.php?hal=dashboard_admin");
         } else {
-            header("Location: index1.php");
+            header("Location: index1.php?hal=dashboard_user");
         }
     } else{
         echo "<p align='center'>Login Gagal!</p>";

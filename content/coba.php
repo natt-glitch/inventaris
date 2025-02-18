@@ -13,34 +13,33 @@ if (!defined('INDEX')) die("");
             <th>Nama Barang</th>
             <th>Jenis</th>
             <th>Kondisi</th>
-            <th>Stok</th>
+            <th>jumlah</th>
+            <th>jumlah Pinjaman</th>
             <th>Pilih</th>
         </thead>
         <tbody>
-            <?php
-            include 'library/config.php'; // Pastikan file koneksi dipanggil
-            $query = "SELECT 
-                        datainventaris.id, 
-                        datainventaris.namaBarang, 
-                        jenis.jenisBarang, 
-                        datainventaris.keterangan, 
-                        datainventaris.stok 
-                      FROM datainventaris  
-                      LEFT JOIN jenis ON datainventaris.kodeBarang = jenis.kodeBarang 
-                      WHERE datainventaris.stok > 0
-                      ORDER BY datainventaris.kodeBarang DESC";
+        <?php
+        $query = "SELECT datainventaris.id, datainventaris.namaBarang, jenis.jenisBarang, 
+                         datainventaris.keterangan, datainventaris.jumlah 
+                  FROM datainventaris  
+                  LEFT JOIN jenis ON datainventaris.kodeBarang = jenis.kodeBarang 
+                  WHERE datainventaris.jumlah > 0
+                  ORDER BY datainventaris.kodeBarang DESC";
 
-            $result = mysqli_query($con, $query);
-            $no = 0;
-            while ($data = mysqli_fetch_assoc($result)) {
-                $no++;
-                ?>
+        $result = mysqli_query($con, $query);
+        $no = 0;
+        while ($data = mysqli_fetch_assoc($result)) {
+            $no++;
+        ?>
                 <tr>
                     <td><?= $no; ?></td>
                     <td><?= $data['namaBarang'] ?></td>
                     <td><?= $data['jenisBarang'] ?></td>
                     <td><?= $data['keterangan'] ?></td>
-                    <td><?= $data['stok'] ?></td>
+                    <td><?= $data['jumlah'] ?></td>
+                    <td>
+                    <input type="number" name="jumlah[<?= $data['id'] ?>]" min="1" max="<?= $data['jumlah'] ?>" value="1">
+                    </td>
                     <td>
                         <input type='checkbox' name='id_barang[]' value='<?= $data['id'] ?>'>
                     </td>
@@ -50,6 +49,7 @@ if (!defined('INDEX')) die("");
             ?>
         </tbody>
     </table>
+    <br>
 
-    <button type="submit">Pinjam</button>
+    <button class="tombol" type="submit">Pinjam</button>
 </form>

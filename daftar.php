@@ -1,6 +1,4 @@
-<?php
-if(!defined('INDEX')) die();
-?>
+
 
 <h2 class="judul">Tambah Pegawai</h2>
 <form action="?hal=inventaris_insert" method="post" enctype="multipart/form-data">

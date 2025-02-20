@@ -12,7 +12,7 @@
         <section class="login-box">
             <img src="gambar/logo.png" alt="" >
             <h2>Login Aplikasi <br>
-             <b>Aplikas Data Inventaris dan Peminjaman Barang</b>
+             <b>Data Inventaris dan Peminjaman Barang</b>
             </h2>
             <form action="ceklogin.php" method="post">
                 <input type="text" placeholder="Username" id="username" name="username" required>

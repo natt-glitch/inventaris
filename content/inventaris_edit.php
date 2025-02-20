@@ -90,6 +90,6 @@ $data = mysqli_fetch_assoc($result);
     
     <div class="form-group">
         <input type="submit" value="Simpan" class="tombol simpan">
-        <input type="reset" value="Batal" class="tombol reset">
+        <a href="?hal=inventaris" class="tombol reset">Batal</a>
     </div>
 </form>

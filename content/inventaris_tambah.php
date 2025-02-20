@@ -14,7 +14,7 @@ if(!defined('INDEX')) die();
         <label for="inventaris">kode Barang</label>
         <div class="input">
             <select name="kodeBarang" id="jabatan">
-                <option value=""> - Pilih kode Barang - </option>
+                <option value="" required> - Pilih kode Barang - </option>
                 <?php
                 $queryj = "SELECT * FROM jenis "; 
                 $resultj = mysqli_query($con,$queryj);
@@ -32,21 +32,21 @@ if(!defined('INDEX')) die();
     <div class="form-group">
         <label for="nama">Nama Barang</label>
         <div class="input">
-            <input type="text" name="nama_barang" id="nama_barang" >
+            <input type="text" name="nama_barang" id="nama_barang" required>
         </div>
     </div>
     
     <div class="form-group">
         <label for="nama">Harga Barang</label>
         <div class="input">
-            <input type="text" name="harga" id="harga" >
+            <input type="number" name="harga" id="harga" required>
         </div>
     </div>
     
     <div class="form-group">
         <label for="nama">Kondisi Barang</label>
         <div class="input">
-            <input type="text" name="kondisi_barang" id="kondisi_barang" >
+            <input type="text" name="kondisi_barang" id="kondisi_barang" required>
         </div>
     </div>
     
@@ -55,14 +55,14 @@ if(!defined('INDEX')) die();
         <label for="kondisi">Keterangan</label>
         <div class="input">
             <textarea name="keterangan" id="kondisi"
-            style="width:100%" rows="5"></textarea>
+            style="width:100%" rows="5" required></textarea>
         </div>
     </div>
 
     <div class="form-group">
         <label for="nama">jumlah</label>
         <div class="input">
-            <input type="text" name="jumlah" id="jumlah" >
+            <input type="number" name="jumlah" id="jumlah" required>
         </div>
     </div>
 
@@ -71,7 +71,7 @@ if(!defined('INDEX')) die();
         <label for="inventaris">Jenis Barang</label>
         <div class="input">
             <select name="jenisBarang" id="jabatan">
-                <option value=""> - Pilih Jenis Barang - </option>
+                <option value="" required> - Pilih Jenis Barang - </option>
                 <?php
                 $queryj = "SELECT * FROM jenis "; 
                 $resultj = mysqli_query($con,$queryj);

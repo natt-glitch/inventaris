@@ -11,11 +11,10 @@
         <section class="login-box">
             <h2>Daftar Aplikasi</h2>
             <form action="daftar_proses.php" method="post">
-                <input type="text" placeholder="Nama Lengkap" id="nama" name="nama">
-                <input type="text" placeholder="Username" id="username" name="username">
-                <input type="password" placeholder="Password" id="password" name="password">              
+                <input type="text" placeholder="Nama Lengkap" id="nama" name="nama" required>
+                <input type="text" placeholder="Username" id="username" name="username" required>
+                <input type="password" placeholder="Password" id="password" name="password" required>              
                 <input type="submit" value="Daftar">
-                <a href="daftar.php" style="text-decoration: none; display: block; text-align: center;">daftar akun</a>
             </form>
         </section>
     </div>

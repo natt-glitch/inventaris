@@ -26,14 +26,22 @@
     flex-basis: 400px;
     background: #fff;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    text-align: center;
  }
- 
+ .login-box img {
+   display: block;
+   width: 20%;
+   margin: 0 auto;
+}
  /* Mengatur judul form dengan border bawah dan posisi di tengah */
  .login-box h2{
     border-bottom: 1px solid #ccc;
     color: #555;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin: 0 0 20px;
  }
  /* Mengatur agar tag input dan select memenuhi container dan
@@ -222,4 +230,18 @@
    width: 5%;
    justify-content: center;
    align-items: center;
+}
+.aj {
+   width: 5%;
+   min-width: 50px; /* Ukuran minimum */
+   max-width: 150px; /* Ukuran maksimum */
+   display: flex;
+   justify-content: center; /* Pusatkan secara horizontal */
+   align-items: center; /* Pusatkan secara vertikal */
+   overflow: hidden; /* Hindari gambar keluar dari batas */
+}
+
+.as {
+   width: 80px;
+   margin-bottom: 15px;
 }

@@ -2,7 +2,7 @@
 if (!defined('INDEX')) die(""); 
 ?>
 
-<h2 class="judul">Data Inventaris</h2>
+<h2 class="judul">Data Barang</h2>
 <a href="?hal=coba" class="tombol edit">Pinjam Barang</a>
 <table class="table">
     <thead>

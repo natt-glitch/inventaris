@@ -1,7 +1,14 @@
 <?php
     if (!defined('INDEX')) die(""); 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Inventaris</title>
+</head>
+<body>
 <h2 class="judul">Data Inventaris</h2>
 
 <form method="GET" style="margin: 10px 0;">
@@ -57,3 +64,6 @@ while ($data = mysqli_fetch_assoc($result)) {
 ?>
     </tbody>
 </table>
+</body>
+</html>
+

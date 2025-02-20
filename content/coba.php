@@ -2,7 +2,7 @@
 if (!defined('INDEX')) die(""); 
 ?>
 
-<h2 class="judul">Data Barang Yang Bisa Dipinjam</h2>
+<h2 class="judul">Pilih Barang Yang Ingin Di Pinjam</h2>
 
 <form action="?hal=peminjaman" method="post" enctype="multipart/form-data">
     Nama Peminjam: <input type="text" name="nama_peminjam" required><br><br>

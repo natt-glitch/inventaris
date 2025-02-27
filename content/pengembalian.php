@@ -22,7 +22,7 @@ if (isset($_GET['kode'])) {
             $kodeTransaksi = $row['kodeTransaksi'];
 
             // Tambah stok barang yang dikembalikan
-            $queryUpdateStok = "UPDATE dataInventaris SET jumlah = jumlah + $jumlahKembali WHERE id = '$idBarang'";
+            $queryUpdateStok = "UPDATE datainventaris SET jumlah = jumlah + $jumlahKembali WHERE id = '$idBarang'";
             if (!mysqli_query($con, $queryUpdateStok)) {
                 throw new Exception("Gagal memperbarui stok barang.");
             }
@@ -46,7 +46,7 @@ if (isset($_GET['kode'])) {
 
         // Commit transaksi jika semua berhasil
         mysqli_commit($con);
-        echo "<script>alert('Pengembalian berhasil!'); window.location='index.php?hal=data_peminjam';</script>";
+        echo "<script>alert('Pengembalian berhasil, dan datainventaris diperbaharui!'); window.location='index.php?hal=data_peminjam';</script>";
     } catch (Exception $e) {
         // Rollback transaksi jika ada kesalahan
         mysqli_rollback($con);

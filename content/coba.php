@@ -52,22 +52,4 @@ if (!defined('INDEX')) die("");
     <br>
 
     <button class="tombol" type="submit">Pinjam</button>
-    <script>
-    document.querySelector("form").addEventListener("submit", function(event) {
-        let inputs = document.querySelectorAll("input[type='text'], textarea");
-        let valid = true;
-
-        inputs.forEach(input => {
-            if (input.value.trim() === "") { // Cek jika input hanya berisi spasi
-                valid = false;
-                alert("Input " + input.name + " tidak boleh hanya berisi spasi!");
-                input.focus();
-            }
-        });
-
-        if (!valid) {
-            event.preventDefault(); // Hentikan pengiriman form jika ada input yang salah
-        }
-    });
-    </script>
 </form>

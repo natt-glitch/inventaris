@@ -25,15 +25,19 @@ include 'library/config.php'; // Koneksi ke database
     <tbody>
         <?php
         $query = "SELECT p.kodePeminjam, p.namaPeminjam, p.jamPinjam, p.jamKembali, 
-        d.jumlah, i.namaBarang, d.idBarang
-        FROM peminjam p
-        JOIN detail_peminjaman d ON p.kodePeminjam = d.kodePeminjam
-        JOIN dataInventaris i ON d.idBarang = i.id
-        ORDER BY p.jamPinjam DESC";
+                d.jumlah, i.namaBarang, d.idBarang
+                FROM peminjam p
+                JOIN detail_peminjaman d ON p.kodePeminjam = d.kodePeminjam
+                JOIN datainventaris i ON d.idBarang = i.id
+                ORDER BY p.jamPinjam DESC;
+                ";
 
 
         $result = mysqli_query($con, $query);
         $no = 0;
+            if (!$result) {
+                die("Error pada query: " . mysqli_error($con));
+            }
         while ($data = mysqli_fetch_assoc($result)) {
             $no++;
         ?>
@@ -46,6 +50,8 @@ include 'library/config.php'; // Koneksi ke database
             <td><?= $data['jamPinjam']; ?></td>
             <td><?= $data['jamKembali']; ?></td>
             <td><a href="?hal=pengembalian&kode=<?=$data['kodePeminjam']?>" class="tombol edit">Kembalikan</a></td>
+
+
 
         </tr>
         <?php

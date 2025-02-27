@@ -18,9 +18,25 @@
                 <input type="text" placeholder="Username" id="username" name="username" required>
                 <input type="password" placeholder="Password" id="password" name="password" required>              
                 <input type="submit" value="Masuk">
-                <a href="daftar.php" style=" display: block; text-align: center;">daftar akun</a>
-                <a href="https://naylaazkiya.github.io/Panduan-apg.k5/" target="_blank">Panduan APG</a>
+                <a href="https://panduan.inventaris.web.id/" target="_blank">Panduan APG</a>
+                <script>
+                document.querySelector("form").addEventListener("submit", function(event) {
+                    let inputs = document.querySelectorAll("input[type='text'], textarea, input[type='password']");
+                    let valid = true;
 
+                    inputs.forEach(input => {
+                        if (input.value.trim() === "") { // Cek jika input hanya berisi spasi
+                            valid = false;
+                            alert("Input " + input.name + " tidak boleh hanya berisi spasi!");
+                            input.focus();
+                        }
+                    });
+
+                    if (!valid) {
+                        event.preventDefault(); // Hentikan pengiriman form jika ada input yang salah
+                    }
+                });
+                </script>
             </form>
         </section>
     </div>

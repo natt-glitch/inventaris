@@ -11,11 +11,33 @@
 <body>
 <h2 class="judul">Data Inventaris</h2>
 
-<form method="GET" style="margin: 10px 0;">
+<form method="GET">
     <input type="hidden" name="hal" value="inventaris">
-    <input type="text" name="search" placeholder="Cari Nama Barang..." value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
-    <button class="tombol edit" type="submit">Cari</button>
+    <input type="text" name="search" placeholder="Cari Nama Barang..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+    <button type="submit" class="tombol simpan">Cari</button>
 </form>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(event) {
+    let input = document.querySelector("input[name='search']");
+    if (input.value.trim() === "") {
+        alert("Kolom pencarian tidak boleh kosong atau hanya spasi!");
+        event.preventDefault();
+    }
+});
+</script>
+
+<?php
+if (!empty($_GET['search'])) {
+    $search = trim($_GET['search']);
+    echo "<p>Hasil pencarian: <strong>" . htmlspecialchars($search) . "</strong></p>";
+} elseif (isset($_GET['search'])) {
+    echo "<p style='color: red;'>Kolom pencarian tidak boleh kosong!</p>";
+}
+?>
+
+
+
 
 <table class="table">
     <thead>

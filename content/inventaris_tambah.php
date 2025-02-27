@@ -13,8 +13,8 @@ if(!defined('INDEX')) die();
     <div class="form-group">
         <label for="inventaris">kode Barang</label>
         <div class="input">
-            <select name="kodeBarang" id="jabatan">
-                <option value="" required> - Pilih kode Barang - </option>
+            <select name="kodeBarang" id="jabatan" required>
+                <option value="" > - Pilih kode Barang - </option>
                 <?php
                 $queryj = "SELECT * FROM jenis "; 
                 $resultj = mysqli_query($con,$queryj);
@@ -90,4 +90,23 @@ if(!defined('INDEX')) die();
         <input type="submit" value="Simpan" class="tombol simpan">
         <input type="reset" value="Batal" class="tombol reset">
     </div>
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        let inputs = document.querySelectorAll("input[type='text'], textarea");
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (input.value.trim() === "") { // Cek jika input hanya berisi spasi
+                valid = false;
+                alert("Input " + input.name + " tidak boleh hanya berisi spasi!");
+                input.focus();
+            }
+        });
+ 
+        if (!valid) {
+            event.preventDefault(); // Hentikan pengiriman form jika ada input yang salah
+        }
+    });
+    </script>
+
 </form>

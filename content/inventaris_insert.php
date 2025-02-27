@@ -23,6 +23,21 @@ $query .= "values ('$kd', '$nama_barang', $harga, '$kondisi_barang', '$ket', '$j
 $result = mysqli_query($con,$query);
 $hasil = mysqli_affected_rows($con);
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama_barang = trim($_POST['nama_barang']);
+    $kondisi_barang = trim($_POST['kondisi_barang']);
+    $keterangan = trim($_POST['keterangan']);
+
+    if ($nama_barang === "" || $kondisi_barang === "" || $keterangan === "") {
+        die("Input tidak boleh hanya berisi spasi!");
+    }
+
+    // Jika lolos validasi, lanjut proses insert ke database
+    // Misal:
+    // $query = "INSERT INTO inventaris (nama_barang, kondisi_barang, keterangan) VALUES ('$nama_barang', '$kondisi_barang', '$keterangan')";
+    // mysqli_query($con, $query);
+}
+
 if ($hasil > 0){
     echo "Berhasil menambah data barang <b>$nama_barang</b>";
     echo "<meta http-equiv='refresh' content='2; url=?hal=inventaris'>";

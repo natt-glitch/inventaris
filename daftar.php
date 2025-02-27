@@ -15,6 +15,24 @@
                 <input type="text" placeholder="Username" id="username" name="username" required>
                 <input type="password" placeholder="Password" id="password" name="password" required>              
                 <input type="submit" value="Daftar">
+                <script>
+                document.querySelector("form").addEventListener("submit", function(event) {
+                    let inputs = document.querySelectorAll("input[type='text'], textarea, input[type='password']");
+                    let valid = true;
+
+                    inputs.forEach(input => {
+                        if (input.value.trim() === "") { // Cek jika input hanya berisi spasi
+                            valid = false;
+                            alert("Input " + input.name + " tidak boleh hanya berisi spasi!");
+                            input.focus();
+                        }
+                    });
+
+                    if (!valid) {
+                        event.preventDefault(); // Hentikan pengiriman form jika ada input yang salah
+                    }
+                });
+                </script>
             </form>
         </section>
     </div>

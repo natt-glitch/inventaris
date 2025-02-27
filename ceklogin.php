@@ -4,6 +4,10 @@
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    if ($username === "" || $password === "" ) {
+        die("Input tidak boleh hanya berisi spasi!");
+    }
     
 
     $query = mysqli_query($con, "SELECT * FROM user WHERE username = '$username' AND password = '$password' "); // Query untuk mencari data user berdasarkan username dan password

@@ -5,8 +5,8 @@ ob_start();
 include "library/config.php";
 
 if (empty($_SESSION['username']) OR empty($_SESSION['password'])) {
-    echo "<p align='center'>Anda harus login terlebih dahulu!</p>";
-    echo "<meta http-equiv='refresh' content='2; url=login.php'>";
+    // echo "<p align='center'>Anda harus login terlebih dahulu!</p>";
+    echo "<meta http-equiv='refresh' content='0; url=login.php'>";
 } else {
     define('INDEX', true);
 
@@ -61,6 +61,7 @@ if (empty($_SESSION['username']) OR empty($_SESSION['password'])) {
                 <li><a href="?hal=inventaris">Data Inventaris</a></li>
                 <li><a href="?hal=inventaris_tambah">Tambah Barang</a></li>
                 <li><a href="?hal=data_peminjam">Data Peminjam</a></li>
+                <li><a href="daftar.php">Daftar User</a></li>
                 <li><a href="logout.php">Keluar</a></li>
             </ul>
         </aside>

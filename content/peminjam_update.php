@@ -12,5 +12,5 @@ if ($result) {
 } else {
     echo "Tidak dapat memperbaharui data! !<br>";
     echo mysqli_error();
-}
+}Q
 ?>

@@ -1,6 +1,20 @@
 <?php
 include 'library/config.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama_peminjam = trim($_POST['nama_peminjam']);
+
+    if ($nama_peminjam === "") {
+        die("Input tidak boleh hanya berisi spasi!");
+    }
+
+    // Jika lolos validasi, lanjut proses insert ke database
+    // Misal:
+    // $query = "INSERT INTO inventaris (nama_barang, kondisi_barang, keterangan) VALUES ('$nama_barang', '$kondisi_barang', '$keterangan')";
+    // mysqli_query($con, $query);
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $namaPeminjam = mysqli_real_escape_string($con, $_POST['nama_peminjam']);
 
